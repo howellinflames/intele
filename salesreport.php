@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Inventory System</title>
+<title>Sales Report</title>
 <script type="text/javascript" src="http://ajax.googleapis.com/
 ajax/libs/jquery/1.5/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="tcal.css" />
