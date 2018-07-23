@@ -5,7 +5,7 @@
 	mysqli_real_connect($connect, "websyst.mysql.database.azure.com", "snazzyhowell@websyst", "buttercup1.", "db_finals", "3306");
 
 	mysqli_select_db($connect,"db_finals");
-	if (!$connect) {
+	if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 	}
 ?>
