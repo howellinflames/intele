@@ -52,7 +52,7 @@ th{
 <tr><td><center>	
 	<?php
 $sql = "SELECT * FROM tbl_inventory";
-$result = mysqli_query($sql);
+$result = mysqli_query($sql, $con);
 
 echo "<select name='item_name' id='item_name'>";
 while ($row = mysqli_fetch_array($result)) {
