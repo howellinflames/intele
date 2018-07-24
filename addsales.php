@@ -6,7 +6,7 @@
 			die('Could not connect: ' . mysqli_error());
 		}
 
-	mysqli_select_db("db_finals", $con);
+	mysqli_select_db($con, "db_finals");
   ?>
 <html>
 <body background="bg5.jpg">
