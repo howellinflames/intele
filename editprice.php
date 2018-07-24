@@ -6,7 +6,7 @@
 			die('Could not connect: ' . mysqli_error());
 		}
 
-	mysqli_select_db("db_finals", $con);
+	mysqli_select_db($con, "db_finals");
   ?>
 <html>
 <head>
@@ -45,7 +45,7 @@ td{
 <table border='3' width='20%'><tr><th colspan=2><center>
 <?php
 $sql = "SELECT * FROM tbl_inventory";
-$result = mysqli_query($sql);
+$result = mysqli_query($con, $sql);
 
 echo "<select name='item_name' id='item_name'>";
 while ($row = mysqli_fetch_array($result)) {
