@@ -18,11 +18,11 @@ if (!$con)
   die('Could not connect: ' . mysqli_error());
   }
 
-mysql_select_db("db_finals", $con);
+mysqli_select_db("db_finals", $con);
 
 $sql = "SELECT * FROM  tbl_sales";
 
-$result = mysql_query($con, $sql);
+$result = mysqli_query($con, $sql);
 ?>
 
 <style>
@@ -61,7 +61,7 @@ echo "
 
 <?php
 
-while($row = mysql_fetch_array($result))
+while($row = mysqli_fetch_array($result))
   {
 	  
   echo "<tbody><tr>";
@@ -84,7 +84,7 @@ echo "<td colspan=6><center>";
 </table>
 </div>
 <?php
-mysql_close($con);
+mysqli_close($con);
 ?> 
 
 </body>
