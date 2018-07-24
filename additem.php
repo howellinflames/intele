@@ -6,7 +6,7 @@
 			die('Could not connect: ' . mysqli_error());
 		}
 
-	mysql_select_db("db_finals", $con);
+	mysqli_select_db("db_finals", $con);
   ?>
 <html>
 <body background="bg4.jpg">
@@ -49,13 +49,13 @@ th{
 <form action="updateinventory.php" method="post">
 	<?php
 	$sql = "SELECT * FROM  tbl_inventory";
-	$result = mysql_query($sql, $con);
+	$result = mysqli_query($sql, $con);
 
 	echo "<center><table border='1' width='20%' ><center>
 		<tr>
 			<th>Item Name</th>
 		</tr>";
-	while($row = mysql_fetch_array($result))
+	while($row = mysqli_fetch_array($result))
 	  {
 		echo "<tr>";
 		echo "<td><input type='radio' name='item_name' value='". $row['item_name'] ."'>". $row['item_name'] ."</td>";

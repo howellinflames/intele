@@ -6,16 +6,16 @@ if (!$con)
   die('Could not connect: ' . mysqli_error());
   }
 
-mysql_select_db("db_finals", $con);
+mysqli_select_db("db_finals", $con);
 
 ?>
 
 <?php 
  $data = "select * from sales_report ";  
- $result = mysql_query($data, $con);
- $get=mysql_query($data); 
+ $result = mysqli_query($data, $con);
+ $get=mysqli_query($data); 
 
-while($row=mysql_fetch_array($get))
+while($row=mysqli_fetch_array($get))
 {
 	$price = $row['price'] ;
 	$qty_buy = $row['qty_buy'] ;
@@ -72,7 +72,7 @@ th {
       </tr>  
 	  </thead>
      <?php  
-     while($row = mysql_fetch_array($result))  
+     while($row = mysqli_fetch_array($result))  
      {  
      ?>  
       <tbody><tr>  

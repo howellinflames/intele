@@ -6,7 +6,7 @@
 			die('Could not connect: ' . mysqli_error());
 		}
 
-	mysql_select_db("db_finals", $con);
+	mysqli_select_db("db_finals", $con);
   ?>
 <html>
 <head>
@@ -45,10 +45,10 @@ td{
 <table border='3' width='20%'><tr><th colspan=2><center>
 <?php
 $sql = "SELECT * FROM tbl_inventory";
-$result = mysql_query($sql);
+$result = mysqli_query($sql);
 
 echo "<select name='item_name' id='item_name'>";
-while ($row = mysql_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result)) {
     echo "<option value='" . $row['item_name'] ."'>" . $row['item_name'] ."</option>";
 }
 echo "</select>";

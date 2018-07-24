@@ -18,11 +18,11 @@ if (!$con)
   die('Could not connect: ' . mysqli_error());
   }
 
-mysql_select_db("db_finals", $con);
+mysqli_select_db("db_finals", $con);
 
 $sql = "SELECT * FROM  tbl_inventory";
 
-$result = mysql_query($sql, $con);
+$result = mysqli_query($sql, $con);
 ?>
 
 <style>
@@ -58,7 +58,7 @@ echo "
 <th></th>
 </tr> </thead>";
 
-while($row = mysql_fetch_array($result))
+while($row = mysqli_fetch_array($result))
   {
   echo "<tr>";
 echo "<td>" . $row['prd_num'] . "</td>";
@@ -80,7 +80,7 @@ echo "<td>" . $row['prd_num'] . "</td>";
 </div>
 <?php
 
-mysql_close($con);
+mysqli_close($con);
 ?> 
 
 </body>

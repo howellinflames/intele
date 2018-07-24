@@ -6,12 +6,12 @@ $con=mysqli_init(); //mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL,
 	mysqli_real_connect($con, "websyst.mysql.database.azure.com", "snazzyhowell@websyst", "buttercup1.", "db_finals", "3306");
 if (!$con)
   {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: ' . mysqli_error());
   }
   
 
 
-mysql_select_db("db_finals", $con);
+mysqli_select_db("db_finals", $con);
 
 $sql1="INSERT INTO tbl_inventory (item_name, price, qty,prd_num)
 VALUES
@@ -21,21 +21,21 @@ $sql2="INSERT INTO tbl_sales (item_name, price, prd_num)
 VALUES
 ( '$_POST[item_name]' ,' $_POST[price]' ,'$_POST[prd_num]')";
 
-if (!mysql_query($sql1,$con))
+if (!mysqli_query($sql1,$con))
   {
-  die('Error: ' . mysql_error());
+  die('Error: ' . mysqli_error());
   }
 echo "1 record added"; 
 
-if (!mysql_query($sql2,$con))
+if (!mysqli_query($sql2,$con))
   {
-  die('Error: ' . mysql_error());
+  die('Error: ' . mysqli_error());
   }
   ?>
 
 
 <?php
-mysql_close($con)
+mysqli_close($con)
 ?> 
 <meta  http-equiv="refresh" content=".000001;url=inventory.php" />
 </body>
