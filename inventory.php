@@ -22,7 +22,7 @@ mysqli_select_db("db_finals", $con);
 
 $sql = "SELECT * FROM  tbl_inventory";
 
-$result = mysqli_query($sql, $con);
+$result = mysqli_query($con, $sql);
 ?>
 
 <style>
