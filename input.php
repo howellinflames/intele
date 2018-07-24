@@ -21,13 +21,13 @@ $sql2="INSERT INTO tbl_sales (item_name, price, prd_num)
 VALUES
 ( '$_POST[item_name]' ,' $_POST[price]' ,'$_POST[prd_num]')";
 
-if (!mysqli_query($sql1,$con))
+if (!mysqli_query($con,$sql1))
   {
   die('Error: ' . mysqli_error());
   }
 echo "1 record added"; 
 
-if (!mysqli_query($sql2,$con))
+if (!mysqli_query($con, $sql2))
   {
   die('Error: ' . mysqli_error());
   }

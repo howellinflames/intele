@@ -12,7 +12,7 @@ mysqli_select_db("db_finals", $con);
 
 <?php 
  $data = "select * from sales_report ";  
- $result = mysqli_query($data, $con);
+ $result = mysqli_query($con, $data);
  $get=mysqli_query($data); 
 
 while($row=mysqli_fetch_array($get))

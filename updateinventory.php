@@ -3,7 +3,8 @@ session_start();
 ?>
 
 <?php
-$con = mysqlii_connect('localhost','root');
+$con=mysqli_init(); //mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); 
+	mysqli_real_connect($con, "websyst.mysql.database.azure.com", "snazzyhowell@websyst", "buttercup1.", "db_finals", "3306");
 if (!$con)
   {
   die('Could not connect: ' . mysqli_error());
@@ -18,7 +19,7 @@ mysqli_select_db("db_finals", $con);
 //INVENTORY update//
 
 $sql1 = "SELECT * FROM  tbl_inventory where item_name= '$item_name'";
-$result1 = mysqli_query($sql1, $con);
+$result1 = mysqli_query($con, $sql1);
 
 while($row = mysqli_fetch_array($result1))
   {

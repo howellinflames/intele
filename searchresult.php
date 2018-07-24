@@ -1,12 +1,12 @@
 <?php
-	$con=mysqli_init(); //mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); 
-	mysqli_real_connect($con, "websyst.mysql.database.azure.com", "snazzyhowell@websyst", "buttercup1.", "db_finals", "3306");
+	$con=mysqlii_init(); //mysqlii_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); 
+	mysqlii_real_connect($con, "websyst.mysqli.database.azure.com", "snazzyhowell@websyst", "buttercup1.", "db_finals", "3306");
 	if (!$con)
 		{
-			die('Could not connect: ' . mysql_error());
+			die('Could not connect: ' . mysqli_error());
 		}
 
-	mysql_select_db("db_finals", $con);
+	mysqli_select_db("db_finals", $con);
   ?>
 <?php  
 
@@ -16,7 +16,7 @@
   $data = "select * from sales_report where Date between '".$_POST["fdate"]."' and '".$_POST["tdate"]."'  
   ";  
 
-  $result = mysql_query($data, $con);  
+  $result = mysqli_query($con, $data);  
   $results .= '  
    <table border="1" align="center">  
      <tr>  
@@ -26,9 +26,9 @@
 		 <th width="25%">Amount</th>  
      </tr>  
   ';  
-  if(mysql_num_rows($result) > 0)  
+  if(mysqli_num_rows($result) > 0)  
   {  
-   while($row = mysql_fetch_array($result))  
+   while($row = mysqli_fetch_array($result))  
    {  
     $results .= '  
      <tr>  

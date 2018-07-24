@@ -49,7 +49,7 @@ th{
 <form action="updateinventory.php" method="post">
 	<?php
 	$sql = "SELECT * FROM  tbl_inventory";
-	$result = mysqli_query($sql, $con);
+	$result = mysqli_query($con, $sql);
 
 	echo "<center><table border='1' width='20%' ><center>
 		<tr>

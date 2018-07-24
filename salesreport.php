@@ -3,7 +3,7 @@ session_start();
 ?>
  <?php
  $data = "select * from tbl_sales order by emp_id asc";  
- $result = mysqli_query($conn, $data);  
+ $result = mysqli_query($data, $con);  
  ?>  
 <html>
 <head>

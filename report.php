@@ -18,7 +18,7 @@ if(isset($_POST["fdate"], $_POST["tdate"]))
 	$results = '';
 	$data = "SELECT * FROM tbl_sales 
 				  WHERE Date BETWEEN '".$_POST["fdate"]."' and ' ".$_POST["tdate"]." '  ";  
-    $result = mysql_query($con, $data);
+    $result = mysql_query($data, $con);
 }
 
  $sold=  "SELECT qty_sold FROM tbl_sales";
@@ -26,7 +26,7 @@ if(isset($_POST["fdate"], $_POST["tdate"]))
  $result1 ="SELECT item_name FROM tbl_sales 
 				  WHERE Date BETWEEN (" '$_POST["fdate"]' AND '$_POST["tdate"]' ")" ;
 				  
- $res = mysql_query($result1, $con);
+ $res = mysql_query($con, $result1);
 
 
 ?>

@@ -22,7 +22,7 @@ mysql_select_db("db_finals", $con);
 
 $sql = "SELECT * FROM  tbl_sales";
 
-$result = mysql_query($sql, $con);
+$result = mysql_query($con, $sql);
 ?>
 
 <style>
