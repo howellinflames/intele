@@ -68,21 +68,21 @@ while($row = mysqli_fetch_array($result1))
 	
     $sql="UPDATE  tbl_sales  SET qty_buy = '".$sold."' 
 			 WHERE item_name = '".$item_name."'";
-	$result=mysqli_query($sql, $con);
+	$result=mysqli_query($con, $sql);
 	
 	
 	$sql = "INSERT INTO sales_report (qty_buy, prd_num, item_name, price) 
 				SELECT qty_buy, prd_num, item_name, price FROM tbl_sales
 				WHERE item_name = '$item_name' " ;
-	$result=mysqli_query($sql, $con);
+	$result=mysqli_query($con, $sql);
 	
 	
 	//UPDATE tables add to tbl_sales minus to tbl_inventory
 	$sql="UPDATE  tbl_inventory  SET qty = '".$minus."' WHERE item_name = '".$item_name."'";
-	$result=mysqli_query($sql, $con);
+	$result=mysqli_query($con, $sql);
 	
 	$sql="UPDATE  tbl_sales  SET qty_sold = '".$add."' WHERE item_name = '".$item_name."'";
-	$result=mysqli_query($sql, $con);		
+	$result=mysqli_query($con, $sql);		
 		
 }	
 
