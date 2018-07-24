@@ -11,7 +11,7 @@ if (!$con)
   
 
 
-mysqli_select_db("db_finals", $con);
+mysqli_select_db($con, "db_finals");
 
 $sql1="INSERT INTO tbl_inventory (item_name, price, qty,prd_num)
 VALUES
