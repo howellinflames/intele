@@ -2,13 +2,14 @@
 
 session_start();
 
-$con = mysqli_connect('localhost','root');
+$con=mysqli_init(); //mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); 
+	mysqli_real_connect($con, "websyst.mysql.database.azure.com", "snazzyhowell@websyst", "buttercup1.", "db_finals", "3306");
 if (!$con)
   {
   die('Could not connect: ' . mysqli_error());
   }
 
-mysqli_select_db ($con, "db_finals");
+mysqli_select_db ("db_finals", $con);
 
 $sold=$_POST['itemsold'];
 $item_name=$_POST['item_name'];
@@ -16,7 +17,7 @@ $item_name=$_POST['item_name'];
 
 
 $sql = "SELECT * FROM  tbl_sales where item_name= '$item_name'";
-$result = mysqli_query($sql, $con);
+$result = mysqli_query($con, $sql);
 
 
 
@@ -31,10 +32,10 @@ while($row = mysqli_fetch_array($result))
 $add=$qty_sold+$sold;
 
 $sql1 = "SELECT * FROM  tbl_inventory where item_name= '$item_name'";
-$result1 = mysqli_query($sql1, $con);
+$result1 = mysqli_query($con, $sql1);
 
 $sql2= "SELECT * FROM sales_report where item_name= '$item_name' ";
-$result2= mysqli_query($sql2, $con);
+$result2= mysqli_query($con, $sql2);
 
 
 while($row = mysqli_fetch_array($result1))
